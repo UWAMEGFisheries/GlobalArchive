@@ -13,8 +13,10 @@ Example code is contained in: `R/examples/get_campaigns.R`. This file sources th
 To run the example code:
 ```
 cd galib/R
-Rscript examples/get_campaigns.R
+Rscript examples/get_campaigns.R <MY_USER_API_TOKEN>
 ```
+
+Where `<MY_USER_API_TOKEN>` is your API token for the GA API.
 
 ### TODO ###
 
