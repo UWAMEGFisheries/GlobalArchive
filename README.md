@@ -6,6 +6,17 @@ A library for interacting with the Global Archive repository
 
 ```
 git clone https://ariell@bitbucket.org/ariell/galib.git
-cd galib
+```
+
+Example code is contained in: `R/examples/get_campaigns.R`. This file sources the `R/galib.R` file which contains all the necessary functions required to interact with the GA API.
+
+To run the example code:
+```
+cd galib/R
 Rscript examples/get_campaigns.R
 ```
+
+### TODO ###
+
+* Turn galib.R into an R package to make it easier
+* Implement the many other API functions that are not yet included in galib.R
