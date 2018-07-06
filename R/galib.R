@@ -20,9 +20,9 @@ ga.get <- function(api_endpoint, api_token, page=1, q="") {
   #
   # Return:
   #   A dataframe containing the json response from the API
-  api_endpoint = sprintf("%s?page=%i", api_endpoint, page)
+  api_endpoint = paste0(api_endpoint, "?page=", page)
   if (q != "") {api_endpoint <- paste0(api_endpoint,"&q=",q)}
-  writeLines(sprintf("\n*** HTTP GET REQUEST: %s\n", api_endpoint))
+  ga.print("\n*** HTTP GET REQUEST: %s\n", api_endpoint)
   r <- GET(URL_DOMAIN, path=api_endpoint, add_headers("auth-token" = api_token), accept_json())
   stop_for_status(r)  # raise error and stop if unsuccessful response
   data = fromJSON(content(r, "text", encoding="UTF-8"))
@@ -38,6 +38,7 @@ ga.get.object_list <- function(api_endpoint, api_token, f=NULL, q="") {
   #   api_token:
   #   f [optional, default=NULL]: function pointer to process each object. If NULL, do nothing
   #   q [optional, default=NULL]: json query string for GA API
+  start_time <- Sys.time()  # start timer (just for info purposes)
   page <- 0
   total_pages <- NULL
   num_results <- 0
@@ -55,12 +56,13 @@ ga.get.object_list <- function(api_endpoint, api_token, f=NULL, q="") {
       for (i in 1:nrow(object_list$objects)){
         obj <- object_list$objects[i,]
         num_objects <- num_objects+1
-        writeLines(sprintf("\n* Processing object: %i/%s...", num_objects, num_results))
+        ga.print("\n* Processing object: %i/%s...", num_objects, num_results)
         f(obj)
       }
     }
   }
-  return (num_results)
+  ga.print("\nDONE! Processed %i results in %.2f seconds...", num_results, difftime(Sys.time(),start_time,units="secs")) # print summary
+  return (num_objects)
 }
 
 ga.download.file <- function(api_token, api_endpoint, path, query=NULL) {
@@ -81,10 +83,18 @@ ga.get.campaign <- function(api_token, campaign_id) {
   return(ga.get(sprintf(API_ENDPOINT_CAMPAIGN_DETAIL, campaign_id), API_USER_TOKEN))
 }
 
-ga.download.campaign_files <- function(api_token, campaign_files, save_path) {
+ga.download.campaign_files <- function(api_token, campaign_files, save_path, match=NULL, exclude=NULL) {
   start_time <- Sys.time()
-  writeLines("Downloading files:")
+  ga.print(paste0("Downloading files | matching: '",match,"' | excluding: '", exclude,"'"))
   nfiles = 0
+  # get filtered list
+  if(!is.null(exclude)) {
+    campaign_files <- campaign_files[-grep(exclude, campaign_files$name), ]
+  }
+  if(!is.null(match)) {
+    campaign_files <- campaign_files[grep(match, campaign_files$name), ]
+  }
+
   # download files to directory
   if (length(campaign_files)) {
     nfiles = nrow(campaign_files)
@@ -93,10 +103,12 @@ ga.download.campaign_files <- function(api_token, campaign_files, save_path) {
       save_file_path <- file.path(save_path, campaign_files[i,"name"])
       cat(sprintf("  Saving: '%s'...", save_file_path))
       ga.download.campaign_file(api_token, id, save_file_path)
+      campaign_files[i,"file_path"] = save_file_path
       writeLines("...Done")
     }
   }
-  writeLines(sprintf("Downloaded %i files in %.2f s", nfiles, difftime(Sys.time(),start_time,units="secs")))
+  ga.print("Downloaded %i files in %.2f s", nfiles, difftime(Sys.time(),start_time,units="secs"))
+  return (campaign_files)
 }
 
 ga.download.campaign_file <- function(api_token, id, save_file_path){
@@ -137,11 +149,11 @@ ga.print.campaign_details <- function(campaign_details) {
   campaign_project <- campaign_details$project
   campaign_workgroups <- campaign_details$workgroups
 
-  writeLines(sprintf("Campaign: %s (ID=%s)", campaign_details$name, campaign_details$id))
-  writeLines(paste("Description: ", campaign_description))
-  writeLines(paste("Method:", campaign_platform["name"]))
-  writeLines(paste("Deployment count:", campaign_details$deployment_count))
-  writeLines(sprintf("Project: %s (ID=%s)", campaign_project["name"], campaign_project["id"]))
+  ga.print("Campaign: %s (ID=%s)", campaign_details$name, campaign_details$id)
+  ga.print("Description: %s", campaign_description)
+  ga.print("Method: %s", campaign_platform["name"])
+  ga.print("Deployment count: %i", campaign_details$deployment_count)
+  ga.print("Project: %s (ID=%s)", campaign_project["name"], campaign_project["id"])
 
   writeLines(sprintf("Shared in %i Collaboration(s):", nrow(campaign_workgroups)))
   # Print Campaign Info fields
@@ -151,19 +163,23 @@ ga.print.campaign_details <- function(campaign_details) {
     }
   }
 
-  writeLines("Found info fields:")
+  ga.print("Found info fields:")
   # Print Campaign Info fields
   if (length(campaign_info)) {
     for (i in 1:nrow(campaign_info)) {
-      writeLines(sprintf("  %s: %s", campaign_info[i,"property"]["name"], campaign_info[i,"value"]))
+      ga.print("  %s: %s", campaign_info[i,"property"]["name"], campaign_info[i,"value"])
     }
   }
 
-  writeLines("Found files:")
+  ga.print("Found files:")
   # Print names and IDs of available files
   if (length(campaign_files)) {
     for (i in 1:nrow(campaign_files)){
-      writeLines(sprintf("  %s (ID=%s)", campaign_files[i,"name"], campaign_files[i,"id"]))
+      ga.print("  %s (ID=%s)", campaign_files[i,"name"], campaign_files[i,"id"])
     }
   }
+}
+
+ga.print <- function(format, ...) {
+  writeLines(sprintf(format, ...))
 }
