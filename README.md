@@ -28,9 +28,7 @@ all .csv and .txt files for all campaigns matching your query.
 ### Example script: `R/examples/get_campaigns.R`
 This is an example script that demonstrates how to get campaigns from the API.
 The idea is that this script provides a starting point, and you can copy this
-and take what you need out of it to make your own scripts / queries.
-
-NOTE: it depends on `R/galib.R`, which is sourced at the top of the file: `source("galib.R")` and needs to be in the current working directory.
+and take what you need out of it to make your own scripts / queries. It depends on `R/galib.R`, which is sourced at the top of the file: `source("galib.R")` and needs to be in the current working directory.
 
 The main line which does all the work is:
 
@@ -43,15 +41,15 @@ out of the API matching query `q` accessible by `API_USER_TOKEN` and processes
 them using the user defined function `process_campaign_object`
 
 
-###### Setting  `USER_API_TOKEN`
+##### Setting  `USER_API_TOKEN`
 You can either set this through command line argument as demonstrated above, or
 configure it as a variable in the script.
 
 
-###### Configuring `q`
+##### Configuring `q`
 The variable `q` is a JSON string that contains the search pattern for the API.
 It is passed to the `ga.get.campaign.list()` function, which processes the
-matched results. Some examples of search queries below (NB: this is not an exhaustive list, there are many more searches that you can do):
+matched results. Some examples search queries:
 
 ```R
 # EXAMPLE 1: search for all campaigns matching pattern ( `%`: wildcard)
@@ -69,20 +67,14 @@ q='{"filters":[{"name":"workgroups","op":"any","val":{"name":"name","op":"ilike"
 # EXAMPLE 7: get all campaigns that chosen user account can access
 q=""
 ```
+NB: this is not an exhaustive list, there are many more searches that you can do
 
-###### Configuring `DATA_DIR` and `MATCH_FILES`
+##### Configuring `DATA_DIR` and `MATCH_FILES`
 The variables `DATA_DIR` and `MATCH_FILES` sets where and what to download.
-This is currently set to:
 ```R
 DATA_DIR <- "my_data"
 ```
-This is set up as a relative path and will be created in the working directory.
-This can be an absolute / relative path of where you want the query files to go.
-
-`MATCH_FILES` is passed to the `ga.download.campaign_files()`
-function. That will filter the set of campaign files to download only the
-matching ones. This is useful if you do not want to download all the .emobs
-and/or .zip files. Some examples:
+This is a relative path in the working directory, but can be an absolute / relative path of where you want the query files to go.
 
 ```R
 # Example 1: only download `.csv` and `.txt` files
@@ -92,11 +84,14 @@ MATCH_FILES <- "_Metadata."
 # Example 3: download all files
 MATCH_FILES <- NULL
 ```
+`MATCH_FILES` is passed to the `ga.download.campaign_files()`
+function. That will filter the set of campaign files to download only the
+matching ones. This is useful if you do not want to download all the .emobs
+and/or .zip files. Some examples:
 
-###### Setting up the `process_campaign_object()` function
+##### Setting up the `process_campaign_object()` function
 The function `process_campaign_object()` is a user-defined function that is passed into
 `ga.get.campaign.list()` and applied to every campaign object in the list.
-
 In the example code, it is set up to perform the following operations:
 
 ```R
