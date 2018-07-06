@@ -52,19 +52,19 @@ It is passed to the `ga.get.campaign.list()` function, which processes the
 matched results. Some examples search queries:
 
 ```R
-# EXAMPLE 1: search for all campaigns matching pattern ( `%`: wildcard)
+# EXAMPLE 1: search for all campaigns matching pattern ( % = wildcard)
 q='{"filters":[{"name":"name","op":"like","val":"%_PointAddis_stereoBRUVs"}]}'
 # EXAMPLE 2: search for specific campaign by name
 q='{"filters":[{"name":"name","op":"eq","val":"2011-09_Barrow.PDS_stereoBRUVs"}]}'
 # EXAMPLE 3: search for all campaigns by user's email
 q='{"filters":[{"name":"user","op":"has","val":{"name":"email","op":"eq","val":"euan.harvey@curtin.edu.au"}}]}'
-# EXAMPLE 4: search for all campaigns from Project (note: `+` for spaces)
-q='{"filters":[{"name":"project","op":"has","val":{"name":"name","op":"eq","val":"Deep+Water+FRDC"}}]}'
-# EXAMPLE 5: search for all campaigns from Collaboration (note: `+` for spaces)
-q='{"filters":[{"name":"workgroups","op":"any","val":{"name":"name","op":"eq","val":"NSW+MER+BRUVS"}}]}'
-# EXAMPLE 6: search for all campaigns from Collaboration with wildcard search (`%`: wildcard, `ilike`: case insensitive)
+# EXAMPLE 4: search for all campaigns from Project (note + for spaces)
+q='{"filters":[{"name":"project","op":"has","val":{"name":"name","op":"eq","val":"Pilbara+Marine+Conservation+Partnership"}}]}'
+# EXAMPLE 5: search for all campaigns from Collaboration (note + for spaces)
+q='{"filters":[{"name":"workgroups","op":"any","val":{"name":"name","op":"eq","val":"Australian+BRUV+synthesis"}}]}'
+# EXAMPLE 6: search for all campaigns from Collaboration with wildcard search (%=wildcard, ilike=case insensitive)
 q='{"filters":[{"name":"workgroups","op":"any","val":{"name":"name","op":"ilike","val":"nsw%bruvs"}}]}'
-# EXAMPLE 7: get all campaigns that chosen user account can access
+# EXAMPLE 7: get all campaigns that my user account has access to
 q=""
 ```
 NB: this is not an exhaustive list, there are many more searches that you can do
