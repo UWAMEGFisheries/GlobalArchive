@@ -21,12 +21,16 @@ Rscript examples/get_campaigns.R <USER_API_TOKEN>
 Where `<USER_API_TOKEN>` is your API token for the GA API. This will download
 all .csv and .txt files for all campaigns matching your query.
 
-### Understanding the example code
+### Understanding the code
+
+-----
 
 #### `R/examples/get_campaigns.R`
 This is an example script that demonstrates how to get campaigns from the API.
 The idea is that this script provides a starting point, and you can copy this
 and take what you need out of it to make your own scripts / queries.
+
+NOTE: it depends on `R/galib.R`, which is sourced at the top of the file: `source("galib.R")` and needs to be in the current working directory.
 
 ##### Setting your `USER_API_TOKEN`
 You can either set this through command line argument as demonstrated above, or
@@ -38,6 +42,8 @@ created there and all processed files will be dumped there too. This is currentl
 ```R
 DATA_DIR <- "my_data"
 ```
+This is set up as a relative path and will be created in the working directory.
+This can be an absolute / relative path of where you want the query files to go.
 
 The variable `MATCH_FILES` is passed to the `ga.download.campaign_files()`
 function. That will filter the set of campaign files to download only the
@@ -91,6 +97,8 @@ q='{"filters":[{"name":"workgroups","op":"any","val":{"name":"name","op":"ilike"
 q=""
 ```
 
+-----
+
 #### `R/galib.R`
 This is a library containing convenience functions which abstract the GA API
 interactions making it quick and easy to get data from the API.
@@ -98,6 +106,8 @@ interactions making it quick and easy to get data from the API.
 ```
 TODO: documentation still to come
 ```
+
+-----
 
 ### TODO
 
