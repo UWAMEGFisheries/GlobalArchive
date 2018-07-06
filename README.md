@@ -115,24 +115,16 @@ The function `process_campaign_object()` is a user-defined function that is pass
 
 In the example code, it is set up to:
 
-* Perform another request to the API to get more detailed campaign info
 ```R
+# Perform another request to the API to get more detailed campaign info
 campaign <- ga.get.campaign(API_USER_TOKEN, object["id"])
-```
-* Print campaign_info to console
-```R
+# Print campaign_info to console
 ga.print.campaign_details(campaign)
-```
-* Download/save campaign files matching `MATCH_FILES`
-```R
+# Download/save campaign files matching `MATCH_FILES`
 campaign_files = ga.download.campaign_files(API_USER_TOKEN, campaign$files, campaign_path, match=MATCH_FILES)
-```
-* Generate csv file containing all campaign info properties
-```R
+# Generate csv file containing all campaign info properties
 ga.download.campaign_info(API_USER_TOKEN, campaign$info, campaign_path)
-```
-* Generate json file containing campaign record information
-```R
+# Generate json file containing campaign record information
 ga.download.campaign_record(API_USER_TOKEN, campaign, campaign_path)
 ```
 
