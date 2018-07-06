@@ -21,7 +21,7 @@ Rscript examples/get_campaigns.R <USER_API_TOKEN>
 Where `<USER_API_TOKEN>` is your API token for the GA API. This will download
 all .csv and .txt files for all campaigns matching your query.
 
-### Understanding the code
+### Understanding the example code
 
 #### `R/examples/get_campaigns.R`
 This is an example script that demonstrates how to get campaigns from the API.
