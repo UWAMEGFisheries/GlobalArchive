@@ -38,11 +38,11 @@ function. That will filter the set of campaign files to download only the
 matching ones. This is useful if you do not want to download all the .emobs
 and/or .zip files. Some examples of what you can set:
 
-Example 1: only download .csv and .txt files
+Example 1: only download `.csv` and `.txt` files
 ```R
 MATCH_FILES <- ".csv$|.txt$"
 ```
-Example 2: only download files with *_Metadata.* in the filename
+Example 2: only download files with `*_Metadata.*` in the filename
 ```R
 MATCH_FILES <- "_Metadata."
 ```
@@ -56,7 +56,7 @@ The variable `q` is a JSON string that contains the search pattern for the API.
 It is passed to the `ga.get.campaign.list()` function, which processes the
 matched results. Some examples of search queries below (NB: this is not an exhaustive list, there are many more searches that you can do):
 
-EXAMPLE 1: search for all campaigns matching pattern ( % = wildcard)
+EXAMPLE 1: search for all campaigns matching pattern ( `%`: wildcard)
 ```R
 q='{"filters":[{"name":"name","op":"like","val":"%_PointAddis_stereoBRUVs"}]}'
 ```
@@ -68,19 +68,19 @@ EXAMPLE 3: search for all campaigns by user's email
 ```R
 q='{"filters":[{"name":"user","op":"has","val":{"name":"email","op":"eq","val":"euan.harvey@curtin.edu.au"}}]}'
 ```
-EXAMPLE 4: search for all campaigns from Project (note + for spaces)
+EXAMPLE 4: search for all campaigns from Project (note: `+` for spaces)
 ```R
 q='{"filters":[{"name":"project","op":"has","val":{"name":"name","op":"eq","val":"Deep+Water+FRDC"}}]}'
 ```
-EXAMPLE 5: search for all campaigns from Collaboration (note + for spaces)
+EXAMPLE 5: search for all campaigns from Collaboration (note: `+` for spaces)
 ```R
 q='{"filters":[{"name":"workgroups","op":"any","val":{"name":"name","op":"eq","val":"NSW+MER+BRUVS"}}]}'
 ```
-EXAMPLE 6: search for all campaigns from Collaboration with wildcard search (%=wildcarg, ilike=case insensitive)
+EXAMPLE 6: search for all campaigns from Collaboration with wildcard search (`%`: wildcarg, `ilike`: case insensitive)
 ```R
 q='{"filters":[{"name":"workgroups","op":"any","val":{"name":"name","op":"ilike","val":"nsw%bruvs"}}]}'
 ```
-EXAMPLE 7: get all campaigns that my user account has access to
+EXAMPLE 7: get all campaigns that chosen user account can access
 ```R
 q=""
 ```
