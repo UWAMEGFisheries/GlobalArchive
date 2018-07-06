@@ -76,7 +76,7 @@ EXAMPLE 5: search for all campaigns from Collaboration (note: `+` for spaces)
 ```R
 q='{"filters":[{"name":"workgroups","op":"any","val":{"name":"name","op":"eq","val":"NSW+MER+BRUVS"}}]}'
 ```
-EXAMPLE 6: search for all campaigns from Collaboration with wildcard search (`%`: wildcarg, `ilike`: case insensitive)
+EXAMPLE 6: search for all campaigns from Collaboration with wildcard search (`%`: wildcard, `ilike`: case insensitive)
 ```R
 q='{"filters":[{"name":"workgroups","op":"any","val":{"name":"name","op":"ilike","val":"nsw%bruvs"}}]}'
 ```
@@ -85,7 +85,7 @@ EXAMPLE 7: get all campaigns that chosen user account can access
 q=""
 ```
 
-#### R/galib.R
+#### `R/galib.R`
 This is a library containing convenience functions which abstract the GA API
 interactions making it quick and easy to get data from the API.
 
