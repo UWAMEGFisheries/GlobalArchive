@@ -33,21 +33,27 @@ You can either set this through command line argument as demonstrated above, or
 configure it as a variable in the script.
 
 ##### Configuring where and what to download
+The variable `DATA_DIR` sets where to download the files. Directories will be
+created there and all processed files will be dumped there too. This is currently set to:
+```R
+DATA_DIR <- "my_data"
+```
+
 The variable `MATCH_FILES` is passed to the `ga.download.campaign_files()`
 function. That will filter the set of campaign files to download only the
 matching ones. This is useful if you do not want to download all the .emobs
 and/or .zip files. Some examples of what you can set:
 
-Example 1: only download `.csv` and `.txt` files
 ```R
+# Example 1: only download `.csv` and `.txt` files
 MATCH_FILES <- ".csv$|.txt$"
 ```
-Example 2: only download files with `*_Metadata.*` in the filename
 ```R
+# Example 2: only download files with `*_Metadata.*` in the filename
 MATCH_FILES <- "_Metadata."
 ```
-Example 3: download all files
 ```R
+# Example 3: download all files
 MATCH_FILES <- NULL
 ```
 
@@ -56,32 +62,32 @@ The variable `q` is a JSON string that contains the search pattern for the API.
 It is passed to the `ga.get.campaign.list()` function, which processes the
 matched results. Some examples of search queries below (NB: this is not an exhaustive list, there are many more searches that you can do):
 
-EXAMPLE 1: search for all campaigns matching pattern ( `%`: wildcard)
 ```R
+# EXAMPLE 1: search for all campaigns matching pattern ( `%`: wildcard)
 q='{"filters":[{"name":"name","op":"like","val":"%_PointAddis_stereoBRUVs"}]}'
 ```
-EXAMPLE 2: search for specific campaign by name
 ```R
+# EXAMPLE 2: search for specific campaign by name
 q='{"filters":[{"name":"name","op":"eq","val":"2011-09_Barrow.PDS_stereoBRUVs"}]}'
 ```
-EXAMPLE 3: search for all campaigns by user's email
 ```R
+# EXAMPLE 3: search for all campaigns by user's email
 q='{"filters":[{"name":"user","op":"has","val":{"name":"email","op":"eq","val":"euan.harvey@curtin.edu.au"}}]}'
 ```
-EXAMPLE 4: search for all campaigns from Project (note: `+` for spaces)
 ```R
+# EXAMPLE 4: search for all campaigns from Project (note: `+` for spaces)
 q='{"filters":[{"name":"project","op":"has","val":{"name":"name","op":"eq","val":"Deep+Water+FRDC"}}]}'
 ```
-EXAMPLE 5: search for all campaigns from Collaboration (note: `+` for spaces)
 ```R
+# EXAMPLE 5: search for all campaigns from Collaboration (note: `+` for spaces)
 q='{"filters":[{"name":"workgroups","op":"any","val":{"name":"name","op":"eq","val":"NSW+MER+BRUVS"}}]}'
 ```
-EXAMPLE 6: search for all campaigns from Collaboration with wildcard search (`%`: wildcard, `ilike`: case insensitive)
 ```R
+# EXAMPLE 6: search for all campaigns from Collaboration with wildcard search (`%`: wildcard, `ilike`: case insensitive)
 q='{"filters":[{"name":"workgroups","op":"any","val":{"name":"name","op":"ilike","val":"nsw%bruvs"}}]}'
 ```
-EXAMPLE 7: get all campaigns that chosen user account can access
 ```R
+# EXAMPLE 7: get all campaigns that chosen user account can access
 q=""
 ```
 
