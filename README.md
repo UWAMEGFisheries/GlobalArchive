@@ -25,7 +25,7 @@ all .csv and .txt files for all campaigns matching your query.
 
 -----
 
-### `R/examples/get_campaigns.R`
+### Example script: `R/examples/get_campaigns.R`
 This is an example script that demonstrates how to get campaigns from the API.
 The idea is that this script provides a starting point, and you can copy this
 and take what you need out of it to make your own scripts / queries.
@@ -117,7 +117,7 @@ time or alternatively you can run queries on all downloaded files at the end.
 
 -----
 
-### `R/galib.R`
+### Library module: `R/galib.R`
 This is a library containing convenience functions which abstract the GA API
 interactions making it quick and easy to get data from the API.
 
