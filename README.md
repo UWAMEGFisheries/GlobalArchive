@@ -113,7 +113,7 @@ MATCH_FILES <- NULL
 The function `process_campaign_object()` is a user-defined function that is passed into
 `ga.get.campaign.list()` and applied to every campaign object in the list.
 
-In the example code, it is set up to:
+In the example code, it is set up to perform the following operations:
 
 ```R
 # Perform another request to the API to get more detailed campaign info
@@ -128,6 +128,9 @@ ga.download.campaign_info(API_USER_TOKEN, campaign$info, campaign_path)
 ga.download.campaign_record(API_USER_TOKEN, campaign, campaign_path)
 ```
 All of the above convenience functions are contained in `R/galib.R` library.
+You can add to this function to perform operations on each campaign at processing
+time or alternatively you can run queries on all downloaded files at the end.
+
 -----
 
 ### `R/galib.R`
