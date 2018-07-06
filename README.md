@@ -56,28 +56,16 @@ matched results. Some examples of search queries below (NB: this is not an exhau
 ```R
 # EXAMPLE 1: search for all campaigns matching pattern ( `%`: wildcard)
 q='{"filters":[{"name":"name","op":"like","val":"%_PointAddis_stereoBRUVs"}]}'
-```
-```R
 # EXAMPLE 2: search for specific campaign by name
 q='{"filters":[{"name":"name","op":"eq","val":"2011-09_Barrow.PDS_stereoBRUVs"}]}'
-```
-```R
 # EXAMPLE 3: search for all campaigns by user's email
 q='{"filters":[{"name":"user","op":"has","val":{"name":"email","op":"eq","val":"euan.harvey@curtin.edu.au"}}]}'
-```
-```R
 # EXAMPLE 4: search for all campaigns from Project (note: `+` for spaces)
 q='{"filters":[{"name":"project","op":"has","val":{"name":"name","op":"eq","val":"Deep+Water+FRDC"}}]}'
-```
-```R
 # EXAMPLE 5: search for all campaigns from Collaboration (note: `+` for spaces)
 q='{"filters":[{"name":"workgroups","op":"any","val":{"name":"name","op":"eq","val":"NSW+MER+BRUVS"}}]}'
-```
-```R
 # EXAMPLE 6: search for all campaigns from Collaboration with wildcard search (`%`: wildcard, `ilike`: case insensitive)
 q='{"filters":[{"name":"workgroups","op":"any","val":{"name":"name","op":"ilike","val":"nsw%bruvs"}}]}'
-```
-```R
 # EXAMPLE 7: get all campaigns that chosen user account can access
 q=""
 ```
@@ -99,12 +87,8 @@ and/or .zip files. Some examples:
 ```R
 # Example 1: only download `.csv` and `.txt` files
 MATCH_FILES <- ".csv$|.txt$"
-```
-```R
 # Example 2: only download files with `*_Metadata.*` in the filename
 MATCH_FILES <- "_Metadata."
-```
-```R
 # Example 3: download all files
 MATCH_FILES <- NULL
 ```
