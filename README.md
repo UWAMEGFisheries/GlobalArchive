@@ -127,7 +127,7 @@ ga.download.campaign_info(API_USER_TOKEN, campaign$info, campaign_path)
 # Generate json file containing campaign record information
 ga.download.campaign_record(API_USER_TOKEN, campaign, campaign_path)
 ```
-
+All of the above convenience functions are contained in `R/galib.R` library.
 -----
 
 ### `R/galib.R`
