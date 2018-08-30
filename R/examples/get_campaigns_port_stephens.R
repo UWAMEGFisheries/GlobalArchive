@@ -42,7 +42,7 @@ MATCH_FILES <- ".csv$|.txt$"
 # EXAMPLE 3: search for all campaigns by user's email
 # q='{"filters":[{"name":"user","op":"has","val":{"name":"email","op":"eq","val":"euan.harvey@curtin.edu.au"}}]}'
 # EXAMPLE 4: search for all campaigns from Project (note + for spaces)
-# q='{"filters":[{"name":"project","op":"has","val":{"name":"name","op":"eq","val":"Port+Stephens-Great+Lakes+Marine+Park+MER+Program"}}]}'
+q='{"filters":[{"name":"project","op":"has","val":{"name":"name","op":"eq","val":"Port+Stephens-Great+Lakes+Marine+Park+MER+Program"}}]}'
 
 # EXAMPLE 5: search for all campaigns from Collaboration (note + for spaces)
 # q='{"filters":[{"name":"workgroups","op":"any","val":{"name":"name","op":"eq","val":"Australian+BRUV+synthesis"}}]}'
@@ -50,6 +50,19 @@ MATCH_FILES <- ".csv$|.txt$"
 # q='{"filters":[{"name":"workgroups","op":"any","val":{"name":"name","op":"ilike","val":"nsw%bruvs"}}]}'
 # EXAMPLE 7: get all campaigns that my user account has access to
 # q=""
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ################################################################################
 # The following is an example of a user defined function that is passed into the
@@ -77,13 +90,40 @@ process_campaign_object <- function(object) {
   #print(campaign_files)  # prints output of campaign files including saved location
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ################################################################################
-# Run the query and process the resultant campaigns
+# Run the query and process the campaigns
 ################################################################################
 # This is where all the magic happens. It makes the API request to retrieve the
 # campaigns matching the query "q" and then processes each one using the
 # function pointer "process_campaign_object"
 nresults <- ga.get.campaign.list(API_USER_TOKEN, process_campaign_object, q=q)
 
-# TODO: once files are downloaded you can run queries, or alternatively you
-# could modify the 'process_campaign_object' function to process data on the fly
+
+
+
+
+
+
+
+
+
+
