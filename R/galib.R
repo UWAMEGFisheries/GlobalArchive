@@ -1,5 +1,5 @@
 # Some url patterns for querying
-URL_DOMAIN <- "http://globalarchive.org"
+URL_DOMAIN <- "https://globalarchive.org"
 # URL_DOMAIN <- "http://localhost:5000"
 API_ENDPOINT_CAMPAIGN_LIST <- "/api/campaign"
 API_ENDPOINT_CAMPAIGN_DETAIL <- "/api/campaign-full/%s"
@@ -117,7 +117,7 @@ ga.download.campaign_file <- function(api_token, id, save_file_path){
 }
 
 ga.download.campaign_record <- function(api_token, campaign_details, save_path) {
-  file_path <- file.path(save_path, "_record.json")
+  file_path <- file.path(save_path, ".record.json")
   # write record to json file
   cat("  Saving campaign record...")
   write(toJSON(campaign_details, pretty=TRUE), file_path)
@@ -127,7 +127,7 @@ ga.download.campaign_record <- function(api_token, campaign_details, save_path) 
 ga.download.campaign_info <- function(api_token, campaign_info, save_path) {
   # campaign_name <- campaign_details$name
   campaign_info <- campaign_info
-  file_path <- file.path(save_path, "_info.csv")
+  file_path <- file.path(save_path, ".info.csv")
   cat("  Saving campaign info...")
   df_info <- data.frame()
   if (length(campaign_info)) {

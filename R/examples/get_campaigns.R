@@ -20,7 +20,7 @@ if (!exists("API_USER_TOKEN")) {
 
 # Configure this to be the location for which you want to download all
 # campaign and project data for this query
-DATA_DIR <- "my_data"
+DATA_DIR <- "mydata"
 
 # Configure search pattern for downloading all files
 # Example: only download .csv and .txt files
@@ -36,19 +36,19 @@ MATCH_FILES <- ".csv$|.txt$"
 # overwrites the previous ones, so comment out the ones you're not using
 #TODO: build a function to help construct common queries
 # EXAMPLE 1: search for all campaigns matching pattern ( % = wildcard)
-q='{"filters":[{"name":"name","op":"like","val":"%_PointAddis_stereoBRUVs"}]}'
+#q='{"filters":[{"name":"name","op":"like","val":"%_PointAddis_stereoBRUVs"}]}'
 # EXAMPLE 2: search for specific campaign by name
-q='{"filters":[{"name":"name","op":"eq","val":"2011-09_Barrow.PDS_stereoBRUVs"}]}'
+#q='{"filters":[{"name":"name","op":"eq","val":"2011-09_Barrow.PDS_stereoBRUVs"}]}'
 # EXAMPLE 3: search for all campaigns by user's email
-q='{"filters":[{"name":"user","op":"has","val":{"name":"email","op":"eq","val":"euan.harvey@curtin.edu.au"}}]}'
+#q='{"filters":[{"name":"user","op":"has","val":{"name":"email","op":"eq","val":"euan.harvey@curtin.edu.au"}}]}'
 # EXAMPLE 4: search for all campaigns from Project (note + for spaces)
-q='{"filters":[{"name":"project","op":"has","val":{"name":"name","op":"eq","val":"Pilbara+Marine+Conservation+Partnership"}}]}'
+#q='{"filters":[{"name":"project","op":"has","val":{"name":"name","op":"eq","val":"Pilbara+Marine+Conservation+Partnership"}}]}'
 # EXAMPLE 5: search for all campaigns from Collaboration (note + for spaces)
 q='{"filters":[{"name":"workgroups","op":"any","val":{"name":"name","op":"eq","val":"Australian+BRUV+synthesis"}}]}'
 # EXAMPLE 6: search for all campaigns from Collaboration with wildcard search (%=wildcarg, ilike=case insensitive)
-q='{"filters":[{"name":"workgroups","op":"any","val":{"name":"name","op":"ilike","val":"nsw%bruvs"}}]}'
+#q='{"filters":[{"name":"workgroups","op":"any","val":{"name":"name","op":"ilike","val":"nsw%bruvs"}}]}'
 # EXAMPLE 7: get all campaigns that my user account has access to
-q=""
+#q=""
 
 ################################################################################
 # The following is an example of a user defined function that is passed into the
@@ -68,8 +68,9 @@ process_campaign_object <- function(object) {
   ga.print.campaign_details(campaign)  # prints details about campaign
 
   # Download/save campaign files and data
-  campaign_path <- file.path(DATA_DIR, campaign$project["name"], campaign$name) # create campaign path: DATA_DIR/<project>/<campaign>
+  campaign_path <- file.path(DATA_DIR, campaign$name) # create campaign path: DATA_DIR/<campaign>/
   dir.create(campaign_path, showWarnings = FALSE, recursive=TRUE)             # create campaign dir (if doesn't already exist)
+  cat(paste( unlist(campaign$project["name"]), collapse=''),  file=file.path(campaign_path, ".projectname.txt"))  # add project name as text file to dir
   campaign_files = ga.download.campaign_files(API_USER_TOKEN, campaign$files, campaign_path, match=MATCH_FILES)   # download all campaign files
   ga.download.campaign_info(API_USER_TOKEN, campaign$info, campaign_path)     # generate csv file containing all campaign info properties
   ga.download.campaign_record(API_USER_TOKEN, campaign, campaign_path)        # generate json file containing campaign record information
