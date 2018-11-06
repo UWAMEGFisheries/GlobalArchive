@@ -5,7 +5,7 @@
 # ###############################################################################
 
 # Tim altered this - need to check it works or is needed?
-check.api<-function(){
+check.api<-function(API_USER_TOKEN){
   if (!exists("API_USER_TOKEN")) {
     args = commandArgs(trailingOnly=TRUE)
     if (length(args)==0) {stop("Not API_USER_TOKEN found. Either set it in the code or pass it as an argument to the script!")}
