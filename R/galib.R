@@ -5,6 +5,7 @@ API_ENDPOINT_CAMPAIGN_LIST <- "/api/campaign"
 API_ENDPOINT_CAMPAIGN_DETAIL <- "/api/campaign-full/%s"
 API_ENDPOINT_CAMPAIGN_FILE <- "/api/campaign_file_file/%s"
 
+
 ###############################################################################
 # General GA API HTTP methods
 ###############################################################################
@@ -183,3 +184,25 @@ ga.print.campaign_details <- function(campaign_details) {
 ga.print <- function(format, ...) {
   writeLines(sprintf(format, ...))
 }
+
+
+
+###############################################################################
+# General GA tidydata methods
+###############################################################################
+
+# Clean names function ----
+#TJL - this could be loaded from a repo as function above?
+clean_names <- function(dat){
+  old_names <- names(dat)
+  new_names <- old_names %>%
+    gsub("%", "percent", .) %>%
+    make.names(.) %>%
+    gsub("[.]+", ".", .) %>%
+    tolower(.) %>%
+    gsub("_$", "", .)
+  setNames(dat, new_names)
+}
+
+
+
