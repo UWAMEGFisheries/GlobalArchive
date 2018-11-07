@@ -185,8 +185,3 @@ ga.print <- function(format, ...) {
   writeLines(sprintf(format, ...))
 }
 
-
-
-
-
-
