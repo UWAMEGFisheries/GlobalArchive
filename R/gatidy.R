@@ -52,7 +52,7 @@ read_files_csv <- function(flnm) {
     mutate(campaignnames = flnm)%>%
     separate(campaignnames,into=c("Folder","Collaborations","Project","CampaignID","File"),sep="/")%>%
     select(-c(Folder,Collaborations,File))%>%
-    str_replace(c(".txt", ".csv"), "")%>%
+    str_replace(.,c(".txt", ".csv"), "")%>%
     clean_names
 }
 ## Function that reads in txt files and creates a column for filepath to get CampaignID ----
@@ -61,7 +61,7 @@ read_files_txt <- function(flnm) {
     mutate(campaignnames = flnm)%>%
     separate(campaignnames,into=c("Folder","Collaborations","Project","CampaignID","File"),sep="/")%>%
     select(-c(Folder,Collaborations,File))%>%
-    str_replace(c(".txt", ".csv"), "")%>%
+    str_replace(.,c(".txt", ".csv"), "")%>%
     clean_names
 }
 
