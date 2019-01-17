@@ -5,7 +5,7 @@ A library for interacting with the Global Archive repository
 ## Get the code
 
 ```bash
-git clone https://ariell@bitbucket.org/ariell/galib.git
+git clone https://github.com/UWAMEGFisheries/globalarchive-api.git
 ```
 
 ## Run the example
