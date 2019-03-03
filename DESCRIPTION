@@ -5,3 +5,5 @@ Title: GlobalArchive
 Description: Helper functions for GlobalArchive.
 Author: Tim Langlois <tim.langlois@uwa.edu.au>; Ariell Friedman <ariell@greybits.com.au>; Brooke Gibbons <brooke.gibbons@uwa.edu.au>
 Maintainer: Tim Langlois <tim.langlois@uwa.edu.au>
+License: GNU Public License v3.0
+RoxygenNote: 6.1.1

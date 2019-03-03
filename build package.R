@@ -4,8 +4,13 @@ build()
 
 install()
 
-capitalise()
+library(GlobalArchive)
 
-ga.get()
+
+document()
 
 check()
+installed.packages()
+
+
+clean_names()
