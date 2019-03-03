@@ -7,3 +7,5 @@ install()
 capitalise()
 
 ga.get()
+
+check()
