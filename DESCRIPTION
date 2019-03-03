@@ -1,2 +1,7 @@
 Package: GlobalArchive
 Version: 0.1
+Date: 2019-03-01
+Title: GlobalArchive
+Description: Helper functions for GlobalArchive.
+Authors: Tim Langlois <tim.langlois@uwa.edu.au>; Ariell Friedman <ariell@greybits.com.au>; Brooke Gibbons <brooke.gibbons@uwa.edu.au>
+Maintainer: Tim Langlois <tim.langlois@uwa.edu.au>
