@@ -1,0 +1,18 @@
+citHeader("To cite GlobalArchive in publications use:")
+
+citEntry(entry = "Article",
+  title        = "Investigating ecosystem processes using targeted fisheries closures: can small-bodied invertivore fish be used as indicators for the effects of western rock lobster fishing?",
+  author       = personList(as.person("Tim langlois")),
+  journal      = "Marine and Freshwater Research",
+  year         = "2017",
+  volume       = "68",
+  number       = "7",
+  pages        = "1251--1259",
+  url          = "http://www.publish.csiro.au/?paper=MF16022",
+
+  textVersion  =
+  paste("Tim Langlois (2017).",
+        "Investigating ecosystem processes using targeted fisheries closures: can small-bodied invertivore fish be used as indicators for the effects of western rock lobster fishing?",
+        "Marine and Freshwater Researc, 68(7), 1251-1259.",
+        "URL http://www.publish.csiro.au/?paper=MF16022/.")
+)

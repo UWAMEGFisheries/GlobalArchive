@@ -3,7 +3,19 @@ Version: 0.1
 Date: 2019-03-01
 Title: GlobalArchive
 Description: Helper functions for GlobalArchive.
-Author: Tim Langlois <tim.langlois@uwa.edu.au>; Ariell Friedman <ariell@greybits.com.au>; Brooke Gibbons <brooke.gibbons@uwa.edu.au>
-Maintainer: Tim Langlois <tim.langlois@uwa.edu.au>
+Authors@R: c(
+    person("Tim", "Langlois", , "tim.langlois@uwa.edu.au", role = c("aut", "cre"), comment = c(ORCID = "0000-0001-6404-4000")),
+    person("Ariell", "Friedman", role = c("aut"), "ariell@greybits.com.au"),
+    person("Brooke", "Gibbons", role = c("aut"), "brooke.gibbons@uwa.edu.au"),
+    person("ARDC", role = "fnd")
+    )
 License: GNU Public License v3.0
+URL: https://github.com/UWAMEGFisheries/GlobalArchive
+BugReports: https://github.com/UWAMEGFisheries/GlobalArchive/issues
 RoxygenNote: 6.1.1
+Imports:
+    dplyr,
+    tidyr
+    
+    
+    
