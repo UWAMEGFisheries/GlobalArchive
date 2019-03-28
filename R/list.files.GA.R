@@ -7,11 +7,11 @@
 #' @return None
 #'
 #' @examples
-#' clean_names()
+#' list.files.GA()
 #'
 #' @export
 list.files.GA<-function(pattern) {
-  list.files(path=download.dir,
+  list.files(path=download.dir, 
              recursive=T,
              pattern=pattern,
              full.names=T)

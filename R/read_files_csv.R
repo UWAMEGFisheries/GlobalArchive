@@ -16,5 +16,6 @@ read_files_csv <- function(flnm) {
   read_csv(flnm,col_types = cols(.default = "c"))%>%
     mutate(campaign.naming=str_replace_all(flnm,paste(download.dir,"/",sep=""),""))%>%
     tidyr::separate(campaign.naming,into=c("project","campaignid"),sep="/",remove=TRUE)%>%
-    clean_names
+    clean_names%>%
+    plyr::rename(., replace = c(opcode="sample"),warn_missing = TRUE)
 }

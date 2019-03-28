@@ -12,7 +12,9 @@ library(GlobalArchive)
 
 GlobalArchive()
 
-clean_names()
+library(dplyr)
+
+clean_names(cars)
 
 
 citation("GlobalArchive")
