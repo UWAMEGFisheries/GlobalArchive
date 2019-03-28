@@ -1,8 +1,9 @@
-#' List files in GA
+##  ----
+#' list.files.GA function
 #'
-#' Read in files that match the pattern in your downloads dir
+#' Function that lists campaign objects from \code{\link{GlobalArchive}}
 #'
-#' @param dat data to be renamed
+#' @param object file to be manipulated
 #'
 #' @return None
 #'

@@ -2,18 +2,18 @@
 % Please edit documentation in R/list.files.GA.R
 \name{list.files.GA}
 \alias{list.files.GA}
-\title{List files in GA}
+\title{list.files.GA function}
 \usage{
 list.files.GA(pattern)
 }
 \arguments{
-\item{dat}{data to be renamed}
+\item{object}{file to be manipulated}
 }
 \value{
 None
 }
 \description{
-Read in files that match the pattern in your downloads dir
+Function that lists campaign objects from \code{\link{GlobalArchive}}
 }
 \examples{
 list.files.GA()
