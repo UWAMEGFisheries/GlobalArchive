@@ -20,16 +20,16 @@ dat.spp<-left_join(dat,synonyms,by=c("family","genus","species"))%>%
  
 if(return.changes==TRUE){taxa.replaced.by.synonym<<-left_join(dat,synonyms,by=c("family","genus","species"))%>% 
   filter(!is.na(genus_correct))%>%
-  select(campaignid,family,genus,species,family_correct,genus_correct,species_correct)%>%
+  select(campaignid,sample,family,genus,species,family_correct,genus_correct,species_correct)%>%
   distinct()
 } 
 
 if(save.report==TRUE){taxa.replaced.by.synonym<<-left_join(dat,synonyms,by=c("family","genus","species"))%>% 
   filter(!is.na(genus_correct))%>%
-  select(campaignid,family,genus,species,family_correct,genus_correct,species_correct)%>%
+  select(campaignid,sample,family,genus,species,family_correct,genus_correct,species_correct)%>%
   distinct()
   setwd(error.dir)
-  write.csv(taxa.replaced.by.synonym,paste(study,deparse(substitute(dat)),"taxa.replaced.by.synonym.csv",sep = "."))
+  write.csv(taxa.replaced.by.synonym,paste(study,deparse(substitute(dat)),"taxa.replaced.by.synonym.csv",sep = "_"),row.names = FALSE)
 } 
 
 return(dat.spp)
