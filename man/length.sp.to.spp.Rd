@@ -13,7 +13,7 @@
 None
 }
 \description{
-Change all sp1 sp2 sp3 to spp \code{\link{GlobalArchive}}
+Change all sp1 sp2 sp3 to spp in length \code{\link{GlobalArchive}}
 }
 \examples{
 length.sp.to.spp()

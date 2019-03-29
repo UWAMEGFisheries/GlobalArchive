@@ -1,7 +1,7 @@
 ##  ----
 #' length.sp.to.spp function
 #'
-#' Change all sp1 sp2 sp3 to spp \code{\link{GlobalArchive}}
+#' Change all sp1 sp2 sp3 to spp in length \code{\link{GlobalArchive}}
 #'
 #' @param object file to be manipulated
 #'
@@ -34,12 +34,5 @@ length.sp.to.spp<-function(dat,sp.list,return.changes=FALSE){
   } 
   
   return(dat.spp)
-  
 }
-
-
-
-
-
-
 
