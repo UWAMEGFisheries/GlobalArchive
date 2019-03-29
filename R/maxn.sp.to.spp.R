@@ -1,11 +1,9 @@
 ##  ----
-#' Sp to spp function
+#' maxn.sp.to.spp function
 #'
-#' Function that corrects sp to spp based on a species list from \code{\link{GlobalArchive}}
+#' Change all sp1 sp2 sp3 to spp \code{\link{GlobalArchive}}
 #'
-#' @param dat file to be manipulated
-#' 
-#' @param sp.list list of species to compare with
+#' @param object file to be manipulated
 #'
 #' @return None
 #'
@@ -19,14 +17,14 @@ maxn.sp.to.spp<-function(dat,
   dat.spp<-dat%>%
     mutate(species=ifelse(species%in%sp.list,"spp",as.character(species)))%>% # Change all of the sp in the sp.list into spp
     mutate(species=ifelse(grepl("sp | sp|spp",species),"spp",as.character(species)))%>%
-    group_by(id,family,genus,species)%>% # 
+    group_by(campaignid,sample,family,genus,species)%>% # 
     slice(which.max(maxn))%>% # Take only the spp with the maximum MaxN
     #mutate(Scientific = paste(genus, species, sep = ' '))%>% # Remake the Scientific
     ungroup()
   
-  if(return.changes==TRUE){taxa.replaced.by.spp<<-anti_join(dat,dat.spp,by=c("id","genus","species"))%>%
-    distinct(id,family,genus,species)%>%
-    select(id,family,genus,species)
+  if(return.changes==TRUE){taxa.replaced.by.spp<<-anti_join(dat,dat.spp,by=c("custodian","campaignid","genus","species"))%>%
+    distinct(custodian,campaignid,family,genus,species)%>%
+    select(custodian,campaignid,family,genus,species)
   } 
   
   return(dat.spp)
