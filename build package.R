@@ -10,8 +10,6 @@ install()
 
 library(GlobalArchive)
 
-GlobalArchive()
-
 library(dplyr)
 
 clean_names(cars)
