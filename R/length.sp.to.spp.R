@@ -11,7 +11,7 @@
 #' length.sp.to.spp()
 #'
 #' @export
-length.sp.to.spp<-function(dat,sp.list){
+length.sp.to.spp<-function(dat,sp.list,return.changes=FALSE){
   
   length.number<-dat%>%
     group_by(campaignid,sample,family,genus,species)%>%
@@ -24,10 +24,17 @@ length.sp.to.spp<-function(dat,sp.list){
     slice(which.max(total))%>%
     left_join(.,length.number) # only select the ones with the highest total
   
-  dat<-semi_join(dat,length.max, by = c("campaignid", "sample", "family", "genus", "species")) # only selects ones that had the highest
+  dat.spp<-semi_join(dat,length.max, by = c("campaignid", "sample", "family", "genus", "species")) # only selects ones that had the highest
   
-  dat<-dat%>%
+  dat.spp<-dat.spp%>%
     dplyr::mutate(species=ifelse(species%in%sp.list,"spp",as.character(species)))
+  
+  if(return.changes==TRUE){length.taxa.replaced.by.spp<<-anti_join(dat,dat.spp,by=c("campaignid","sample","genus","species"))%>%
+    distinct(campaignid,sample,family,genus,species)
+  } 
+  
+  return(dat.spp)
+  
 }
 
 

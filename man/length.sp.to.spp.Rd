@@ -4,7 +4,7 @@
 \alias{length.sp.to.spp}
 \title{length.sp.to.spp function}
 \usage{
-\method{length}{sp.to.spp}(dat, sp.list)
+\method{length}{sp.to.spp}(dat, sp.list, return.changes = FALSE)
 }
 \arguments{
 \item{object}{file to be manipulated}

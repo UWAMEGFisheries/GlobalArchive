@@ -11,9 +11,7 @@
 #' maxn.sp.to.spp()
 #'
 #' @export
-maxn.sp.to.spp<-function(dat,
-                         sp.list,
-                         return.changes=FALSE){
+maxn.sp.to.spp<-function(dat,sp.list,return.changes=FALSE){
   dat.spp<-dat%>%
     mutate(species=ifelse(species%in%sp.list,"spp",as.character(species)))%>% # Change all of the sp in the sp.list into spp
     mutate(species=ifelse(grepl("sp | sp|spp",species),"spp",as.character(species)))%>%
@@ -22,9 +20,8 @@ maxn.sp.to.spp<-function(dat,
     #mutate(Scientific = paste(genus, species, sep = ' '))%>% # Remake the Scientific
     ungroup()
   
-  if(return.changes==TRUE){taxa.replaced.by.spp<<-anti_join(dat,dat.spp,by=c("custodian","campaignid","genus","species"))%>%
-    distinct(custodian,campaignid,family,genus,species)%>%
-    select(custodian,campaignid,family,genus,species)
+  if(return.changes==TRUE){maxn.taxa.replaced.by.spp<<-anti_join(dat,dat.spp,by=c("campaignid","sample","genus","species"))%>%
+    distinct(campaignid,sample,family,genus,species)
   } 
   
   return(dat.spp)
