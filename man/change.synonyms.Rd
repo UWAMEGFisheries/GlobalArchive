@@ -4,7 +4,7 @@
 \alias{change.synonyms}
 \title{change.synonyms function}
 \usage{
-change.synonyms(dat, return.changes = FALSE)
+change.synonyms(dat, return.changes = FALSE, save.report = FALSE)
 }
 \arguments{
 \item{object}{file to be manipulated}
