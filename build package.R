@@ -14,7 +14,6 @@ library(dplyr)
 
 clean_names(cars)
 
-
 citation("GlobalArchive")
 
 API_ENDPOINT_CAMPAIGN_LIST
