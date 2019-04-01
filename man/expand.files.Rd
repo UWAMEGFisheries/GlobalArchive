@@ -4,7 +4,7 @@
 \alias{expand.files}
 \title{List files in GA}
 \usage{
-expand.files(files)
+\method{expand}{files}(files)
 }
 \arguments{
 \item{dat}{}

@@ -1,3 +1,5 @@
+library(dplyr)
+library(tidyr)
 library(devtools)
 
 document()
@@ -18,3 +20,6 @@ citation("GlobalArchive")
 
 API_ENDPOINT_CAMPAIGN_LIST
 URL_DOMAIN
+
+
+install.packages("devtools", lib="/data/Rpackages/")

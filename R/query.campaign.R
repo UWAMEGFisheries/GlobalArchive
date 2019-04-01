@@ -11,7 +11,7 @@
 #' query.campaign()
 #'
 #' @export
-query.campaign<-funtion(campaign){
+query.campaign<-function(campaign){
   q='{"filters":[{"name":"name","op":"eq","val":"Insert campaignID"}]}'
   q<-str_replace_all(q,"Insert campaignID",campaign)
 }
