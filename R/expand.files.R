@@ -1,6 +1,7 @@
-#' List files in GA
+##  ----
+#' expand.files function
 #'
-#' Expand files
+#' Function that expands list of files as a data.frame from \code{\link{GlobalArchive}}
 #'
 #' @param dat 
 #'
