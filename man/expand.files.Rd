@@ -2,7 +2,7 @@
 % Please edit documentation in R/expand.files.R
 \name{expand.files}
 \alias{expand.files}
-\title{List files in GA}
+\title{expand.files function}
 \usage{
 \method{expand}{files}(files)
 }
@@ -13,7 +13,7 @@
 None
 }
 \description{
-Expand files
+Function that expands list of files as a data.frame from \code{\link{GlobalArchive}}
 }
 \examples{
 expand.files()

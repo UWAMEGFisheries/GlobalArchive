@@ -1,12 +1,15 @@
 library(dplyr)
 library(tidyr)
 library(devtools)
+library(stringr)
 
-document()
 
-build()
 
-check()
+#build()
+
+#document()
+
+#check()   #have to manually correct the NAMESPACE
 
 install()
 
@@ -14,12 +17,11 @@ library(GlobalArchive)
 
 library(dplyr)
 
-clean_names(cars)
+
 
 citation("GlobalArchive")
 
-API_ENDPOINT_CAMPAIGN_LIST
-URL_DOMAIN
+# Test
+clean_names(cars)
 
-
-install.packages("devtools", lib="/data/Rpackages/")
+q<-query.pattern("sdfsd")
