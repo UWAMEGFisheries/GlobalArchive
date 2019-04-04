@@ -3,13 +3,13 @@ library(tidyr)
 library(devtools)
 library(stringr)
 
-
-
-#build()
-
-#document()
-
-#check()   #have to manually correct the NAMESPACE
+# document()
+# 
+# build()
+# 
+# 
+# 
+# check()   #have to manually correct the NAMESPACE
 
 install()
 
