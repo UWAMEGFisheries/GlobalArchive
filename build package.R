@@ -3,9 +3,9 @@ library(tidyr)
 library(devtools)
 library(stringr)
 
-# document()
+document()
 # 
-# build()
+build()
 # 
 # 
 # 
