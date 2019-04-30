@@ -18,7 +18,7 @@ library(GlobalArchive)
 
 library(dplyr)
 
-
+GlobalArchive::create.maxn()
 
 citation("GlobalArchive")
 
