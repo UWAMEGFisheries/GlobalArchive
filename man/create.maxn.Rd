@@ -4,7 +4,7 @@
 \alias{create.maxn}
 \title{create.maxn function}
 \usage{
-create.maxn(dat, include.count.files = FALSE)
+create.maxn(dat)
 }
 \arguments{
 \item{object}{file to be manipulated}
