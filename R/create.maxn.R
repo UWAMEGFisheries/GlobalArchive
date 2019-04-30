@@ -17,9 +17,9 @@ create.maxn<-function(dat){
   points.files$lines<-sapply(points.files,countLines) # Count lines in files (to avoid empty files breaking the script)
   
   points<-as.data.frame(points.files)%>%
-    mutate(campaign=row.names(.))%>%
+    dplyr::mutate(campaign=row.names(.))%>%
     filter(lines>1)%>% # filter out all empty text files
-    select(campaign)%>%
+    dplyr::select(campaign)%>%
     as_vector(.)%>% # remove all empty files
     purrr::map_df(~read_files_txt(.))
   
@@ -27,9 +27,9 @@ create.maxn<-function(dat){
   count.files$lines<-sapply(count.files,countLines) # Count lines in files (to avoid empty files breaking the script)
   
   count<-as.data.frame(count.files)%>%
-    mutate(campaign=row.names(.))%>%
-    filter(lines>1)%>% # filter out all empty text files
-    select(campaign)%>%
+    dplyr::mutate(campaign=row.names(.))%>%
+    dplyr::filter(lines>1)%>% # filter out all empty text files
+    dplyr::select(campaign)%>%
     as_vector(.)%>% # remove all empty files
     purrr::map_df(~read_files_csv(.))
   

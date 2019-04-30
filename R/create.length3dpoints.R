@@ -16,9 +16,9 @@ create.length3dpoints<-function(dat){
   threedpoints.files <-list.files.GA("3DPoints.txt") # list all files ending in "3DPoints.txt"
   threedpoints.files$lines<-sapply(threedpoints.files,countLines) # Count lines in files (to avoid empty files breaking the script)
   threedpoints<-as.data.frame(threedpoints.files)%>%
-    mutate(campaign=row.names(.))%>%
-    filter(lines>1)%>% # filter out all empty text files
-    select(campaign)%>%
+    dplyr::mutate(campaign=row.names(.))%>%
+    dplyr::filter(lines>1)%>% # filter out all empty text files
+    dplyr::select(campaign)%>%
     as_vector(.)%>% # remove all empty files
     purrr::map_df(~read_files_txt(.))
   
@@ -26,9 +26,9 @@ create.length3dpoints<-function(dat){
   lengths.files <-list.files.GA("Lengths.txt") # list all files ending in "Lengths.txt"
   lengths.files$lines<-sapply(lengths.files,countLines) # Count lines in files (to avoid empty files breaking the script)
   lengths<-as.data.frame(lengths.files)%>%
-    mutate(campaign=row.names(.))%>%
-    filter(lines>1)%>% # filter out all empty text files
-    select(campaign)%>%
+    dplyr::mutate(campaign=row.names(.))%>%
+    dplyr::filter(lines>1)%>% # filter out all empty text files
+    dplyr::select(campaign)%>%
     as_vector(.)%>% # remove all empty files
     purrr::map_df(~read_files_txt(.))
   
@@ -36,9 +36,9 @@ create.length3dpoints<-function(dat){
   length.files <-list.files.GA("Length.csv") # list all files ending in "Lengths.txt"
   length.files$lines<-sapply(length.files,countLines) # Count lines in files (to avoid empty files breaking the script)
   length <-as.data.frame(length.files)%>%
-    mutate(campaign=row.names(.))%>%
-    filter(lines>1)%>% # filter out all empty text files
-    select(campaign)%>%
+    dplyr::mutate(campaign=row.names(.))%>%
+    dplyr::filter(lines>1)%>% # filter out all empty text files
+    dplyr::select(campaign)%>%
     as_vector(.)%>% # list all files ending in "Length.csv"
     purrr::map_df(~read_files_csv(.))
   

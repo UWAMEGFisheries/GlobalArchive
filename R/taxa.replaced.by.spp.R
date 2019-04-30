@@ -13,9 +13,9 @@
 #' @export
 taxa.replaced.by.spp<-function(dat){
   dat<-dat%>%
-    filter(species%in%sp.list)%>%
-    distinct(campaignid,family,genus,species)%>%
-    select(campaignid,family,genus,species)
+    dplyr::filter(species%in%sp.list)%>%
+    dplyr::distinct(campaignid,family,genus,species)%>%
+    dplyr::select(campaignid,family,genus,species)
 }
 
 
