@@ -2,6 +2,7 @@ library(dplyr)
 library(tidyr)
 library(devtools)
 library(stringr)
+library(RCurl)
 
 document()
 

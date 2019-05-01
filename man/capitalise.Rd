@@ -16,6 +16,6 @@ None
 Function to capitalise species names from \code{\link{GlobalArchive}}
 }
 \examples{
-read_files_txt()
+capitalise("tEst dATa")
 
 }
