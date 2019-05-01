@@ -8,6 +8,8 @@
 #' @return None
 #'
 #' @examples
+#' install.packages("dplyr")
+#' library(dplyr)
 #' change.synonyms()
 #'
 #' @export

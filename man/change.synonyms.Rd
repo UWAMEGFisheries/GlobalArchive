@@ -16,6 +16,8 @@ None
 Change all synonyms \code{\link{GlobalArchive}}
 }
 \examples{
+install.packages("dplyr")
+library(dplyr)
 change.synonyms()
 
 }
