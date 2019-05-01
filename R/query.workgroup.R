@@ -8,7 +8,6 @@
 #' @return None
 #'
 #' @examples
-#' query.workgroup()
 #'
 #' @export
 query.workgroup<-function(workgroup){

@@ -8,7 +8,6 @@
 #' @return None
 #'
 #' @examples
-#' taxa.replaced.by.spp()
 #'
 #' @export
 taxa.replaced.by.spp<-function(dat){

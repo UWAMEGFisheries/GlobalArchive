@@ -8,7 +8,6 @@
 #' @return None
 #'
 #' @examples
-#' check.api()
 #'
 #' @export
 check.api<-function(API_USER_TOKEN){

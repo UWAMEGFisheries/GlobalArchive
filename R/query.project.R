@@ -8,7 +8,6 @@
 #' @return None
 #'
 #' @examples
-#' query.project()
 #'
 #' @export
 query.project<-function(project){

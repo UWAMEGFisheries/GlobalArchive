@@ -8,7 +8,6 @@
 #' @return None
 #'
 #' @examples
-#' read_files_txt()
 #'
 #' @export
 read_files_txt <- function(flnm) {

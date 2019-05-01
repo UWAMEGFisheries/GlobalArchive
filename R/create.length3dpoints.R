@@ -8,7 +8,6 @@
 #' @return None
 #'
 #' @examples
-#' create.length3dpoints()
 #'
 #' @export
 create.length3dpoints<-function(dat){

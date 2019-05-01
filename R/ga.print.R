@@ -9,7 +9,6 @@
 #' @return prints output
 #'
 #' @examples
-#' ga.print()
 #'
 #' @export
 ga.print <- function(format, ...) {

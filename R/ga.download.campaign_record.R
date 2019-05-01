@@ -12,7 +12,6 @@
 #' @return prints output
 #'
 #' @examples
-#' ga.download.campaign_record()
 #'
 #' @export
 ga.download.campaign_record <- function(api_token, campaign_details, save_path) {

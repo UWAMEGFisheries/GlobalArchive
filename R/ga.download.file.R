@@ -13,7 +13,6 @@
 #' @return A dataframe containing the json response from the API
 #'
 #' @examples
-#' process_campaign_object()
 #'
 #' @export
 ga.download.file <- function(api_token, api_endpoint, path, query=NULL) {

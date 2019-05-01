@@ -8,7 +8,6 @@
 #' @return None
 #'
 #' @examples
-#' read_files_csv()
 #'
 #' @export
 

@@ -9,7 +9,6 @@
 #' @return null
 #'
 #' @examples
-#' ga.get.campaign()
 #'
 #' @export
 ga.get.campaign <- function(api_token, campaign_id) {

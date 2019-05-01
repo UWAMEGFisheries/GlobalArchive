@@ -8,7 +8,6 @@
 #' @return None
 #'
 #' @examples
-#' query.pattern()
 #'
 #' @export
 query.pattern<-function(pattern){

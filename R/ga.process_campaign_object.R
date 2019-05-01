@@ -8,7 +8,6 @@
 #' @return None
 #'
 #' @examples
-#' process_campaign_object()
 #'
 #' @export
 process_campaign_object <- function(object) {

@@ -8,7 +8,6 @@
 #' @return None
 #'
 #' @examples
-#' query.campaign()
 #'
 #' @export
 query.campaign<-function(campaign){

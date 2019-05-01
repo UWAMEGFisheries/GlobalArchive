@@ -8,7 +8,6 @@
 #' @return None
 #'
 #' @examples
-#' list.files.GA()
 #'
 #' @export
 list.files.GA<-function(pattern) {

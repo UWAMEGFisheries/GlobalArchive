@@ -14,7 +14,6 @@
 #' @return A dataframe containing the json response from the API
 #'
 #' @examples
-#' process_campaign_object()
 #'
 #' @export
 ga.get.object_list <- function(api_endpoint, api_token, f=NULL, q="") {

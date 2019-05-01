@@ -8,7 +8,6 @@
 #' @return None
 #'
 #' @examples
-#' change.synonyms()
 #'
 #' @export
 change.synonyms<-function(dat,return.changes=FALSE,save.report=FALSE){

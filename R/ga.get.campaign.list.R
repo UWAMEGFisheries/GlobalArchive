@@ -9,7 +9,6 @@
 #' @return prints list of campaigns
 #'
 #' @examples
-#' ga.get.campaign.list()
 #'
 #' @export
 ga.get.campaign.list <- function(api_token, f, q="") {

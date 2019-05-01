@@ -13,7 +13,6 @@
 #' @return prints output
 #'
 #' @examples
-#' ga.print()
 #'
 #' @export
 ga.download.campaign_file <- function(api_token, id, save_file_path){

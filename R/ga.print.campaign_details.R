@@ -8,7 +8,6 @@
 #' @return prints output
 #'
 #' @examples
-#' ga.print.campaign_details()
 #'
 #' @export
 ga.print.campaign_details <- function(campaign_details) {

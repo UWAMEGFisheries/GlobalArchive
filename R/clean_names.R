@@ -7,7 +7,6 @@
 #' @return None
 #'
 #' @examples
-#' clean_names()
 #'
 #' @export
 clean_names <- function(dat){

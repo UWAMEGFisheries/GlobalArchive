@@ -8,7 +8,6 @@
 #' @return None
 #'
 #' @examples
-#' maxn.sp.to.spp()
 #'
 #' @export
 maxn.sp.to.spp<-function(dat,sp.list,return.changes=FALSE){

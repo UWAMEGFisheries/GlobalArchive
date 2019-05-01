@@ -8,7 +8,6 @@
 #' @return None
 #'
 #' @examples
-#' lengths.sp.to.spp()
 #'
 #' @export
 lengths.sp.to.spp<-function(dat,sp.list,return.changes=FALSE){

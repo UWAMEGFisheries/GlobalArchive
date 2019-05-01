@@ -8,7 +8,6 @@
 #' @return None
 #'
 #' @examples
-#' create.maxn()
 #'
 #' @export
 create.maxn<-function(dat){

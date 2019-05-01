@@ -12,7 +12,6 @@
 #' @return prints output
 #'
 #' @examples
-#' ga.print()
 #'
 #' @export
 
