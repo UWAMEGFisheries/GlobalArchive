@@ -2,7 +2,6 @@ library(dplyr)
 library(tidyr)
 library(devtools)
 library(stringr)
-library(audio)
 #library(RCurl)
 
 document()
@@ -26,4 +25,4 @@ clean_names(cars)
 
 GlobalArchive::c
 
-q<-query.pattern("sdfsd")
+

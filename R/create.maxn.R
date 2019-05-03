@@ -37,7 +37,7 @@ create.maxn<-function(dat){
   # If count is blank but there are points
   if (dim(count)[1] == 0 & dim(points)[1] > 0) {
     maxn<-points%>%
-      dplyr::group_by(campaignid,sample,frame,family,genus,species)%>%
+      dplyr::group_by(campaignid,sample,filename,periodtime,frame,family,genus,species)%>%
       dplyr::mutate(number=as.numeric(number))%>%
       dplyr::summarise(maxn=sum(number))%>%
       dplyr::group_by(campaignid,sample,family,genus,species)%>%
@@ -53,7 +53,7 @@ create.maxn<-function(dat){
     # if both aren't blank
   } else if (dim(count)[1] > 0 & dim(points)[1] > 0) {
     maxn <-points%>%
-      dplyr::group_by(campaignid,sample,frame,family,genus,species)%>%
+      dplyr::group_by(campaignid,sample,filename,periodtime,frame,family,genus,species)%>%
       dplyr::mutate(number=as.numeric(number))%>%
       dplyr::summarise(maxn=sum(number))%>%
       dplyr::group_by(campaignid,sample,family,genus,species)%>%
