@@ -16,13 +16,8 @@ library(GlobalArchive)
 
 library(dplyr)
 
-GlobalArchive::create.maxn()
 
 citation("GlobalArchive")
 
 # Test
 clean_names(cars)
-
-GlobalArchive::c
-
-
