@@ -21,6 +21,5 @@ prints output
 Function that downloads campaign_files from  \code{\link{GlobalArchive}}
 }
 \examples{
-ga.print()
 
 }

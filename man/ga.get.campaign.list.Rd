@@ -16,6 +16,5 @@ prints list of campaigns
 Function that gets campaign list from  \code{\link{GlobalArchive}}
 }
 \examples{
-ga.get.campaign.list()
 
 }

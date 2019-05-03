@@ -2,7 +2,8 @@ library(dplyr)
 library(tidyr)
 library(devtools)
 library(stringr)
-library(RCurl)
+library(audio)
+#library(RCurl)
 
 document()
 

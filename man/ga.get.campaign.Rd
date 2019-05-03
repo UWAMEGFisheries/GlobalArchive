@@ -16,6 +16,5 @@ null
 Function that gets campaign from  \code{\link{GlobalArchive}}
 }
 \examples{
-ga.get.campaign()
 
 }

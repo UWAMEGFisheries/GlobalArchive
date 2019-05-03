@@ -16,6 +16,5 @@ None
 Function that checks connection to \code{\link{GlobalArchive}}
 }
 \examples{
-check.api()
 
 }

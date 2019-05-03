@@ -16,6 +16,5 @@ None
 Function that lists campaign objects from \code{\link{GlobalArchive}}
 }
 \examples{
-list.files.GA()
 
 }

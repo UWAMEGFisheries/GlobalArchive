@@ -16,6 +16,5 @@ prints output
 Function that prints particular campaign info from  \code{\link{GlobalArchive}}
 }
 \examples{
-ga.print.campaign_details()
 
 }

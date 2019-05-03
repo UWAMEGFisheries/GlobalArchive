@@ -16,6 +16,5 @@ None
 The create.length3dpoints function finds all files ending in "Lengths.txt","3DPoints.txt" and "Count.csv" and combines them into one dataframe \code{\link{GlobalArchive}}
 }
 \examples{
-create.length3dpoints()
 
 }

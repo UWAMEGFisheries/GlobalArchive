@@ -16,6 +16,5 @@ None
 Change all sp1 sp2 sp3 to spp and only keep the one with the most length measurements \code{\link{GlobalArchive}}
 }
 \examples{
-lengths.sp.to.spp()
 
 }

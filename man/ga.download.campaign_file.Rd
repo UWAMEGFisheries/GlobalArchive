@@ -20,6 +20,5 @@ prints output
 Function that dowloads particular campaign from  \code{\link{GlobalArchive}}
 }
 \examples{
-ga.print()
 
 }

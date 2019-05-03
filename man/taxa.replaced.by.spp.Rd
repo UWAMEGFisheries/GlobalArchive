@@ -16,6 +16,5 @@ None
 List all taxa replaced by all sp1 sp2 sp3 to spp \code{\link{GlobalArchive}}
 }
 \examples{
-taxa.replaced.by.spp()
 
 }

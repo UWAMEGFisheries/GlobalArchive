@@ -16,6 +16,5 @@ None
 Function that returns campaign objects from \code{\link{GlobalArchive}}
 }
 \examples{
-process_campaign_object()
 
 }

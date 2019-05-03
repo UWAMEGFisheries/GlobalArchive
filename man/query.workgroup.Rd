@@ -16,6 +16,5 @@ None
 Query by workgroup name \code{\link{GlobalArchive}}
 }
 \examples{
-query.workgroup()
 
 }

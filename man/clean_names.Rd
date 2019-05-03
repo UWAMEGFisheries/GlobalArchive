@@ -16,6 +16,5 @@ None
 Creates lower case names with no special characters in \code{\link{GlobalArchive}}
 }
 \examples{
-clean_names()
 
 }

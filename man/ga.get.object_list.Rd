@@ -22,6 +22,5 @@ A dataframe containing the json response from the API
 Function that performs paginated multiple HTTP GET requests on api endpoint and processes each object with optional processing function from  \code{\link{GlobalArchive}}
 }
 \examples{
-process_campaign_object()
 
 }

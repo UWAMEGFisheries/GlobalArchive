@@ -16,6 +16,5 @@ None
 The create.maxn function finds all files ending in "Points.txt" and "Count.csv" and combines them into a maxn file \code{\link{GlobalArchive}}
 }
 \examples{
-create.maxn()
 
 }

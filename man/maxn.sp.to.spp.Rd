@@ -16,6 +16,5 @@ None
 Change all sp1 sp2 sp3 to spp \code{\link{GlobalArchive}}
 }
 \examples{
-maxn.sp.to.spp()
 
 }

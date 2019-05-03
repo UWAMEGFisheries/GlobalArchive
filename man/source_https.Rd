@@ -16,6 +16,5 @@ None
 Function that brings in url values from github \code{\link{GlobalArchive}}
 }
 \examples{
-list.files.GA()
 
 }

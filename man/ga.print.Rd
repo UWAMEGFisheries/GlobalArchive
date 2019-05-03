@@ -16,6 +16,5 @@ prints output
 Function that prints objects from  \code{\link{GlobalArchive}}
 }
 \examples{
-ga.print()
 
 }

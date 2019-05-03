@@ -16,6 +16,5 @@ None
 Query by project name \code{\link{GlobalArchive}}
 }
 \examples{
-query.project()
 
 }

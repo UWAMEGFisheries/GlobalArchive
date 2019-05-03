@@ -16,6 +16,5 @@ None
 Query by campaign name \code{\link{GlobalArchive}}
 }
 \examples{
-query.campaign()
 
 }

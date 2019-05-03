@@ -19,7 +19,8 @@ create.length3dpoints<-function(dat){
     dplyr::filter(lines>1)%>% # filter out all empty text files
     dplyr::select(campaign)%>%
     as_vector(.)%>% # remove all empty files
-    purrr::map_df(~read_files_txt(.))
+    purrr::map_df(~read_files_txt(.))%>%
+    select(-c(project))
   
   # Combine all downloaded Lengths txt files into one data frame (EM)
   lengths.files <-list.files.GA("Lengths.txt") # list all files ending in "Lengths.txt"
@@ -29,7 +30,8 @@ create.length3dpoints<-function(dat){
     dplyr::filter(lines>1)%>% # filter out all empty text files
     dplyr::select(campaign)%>%
     as_vector(.)%>% # remove all empty files
-    purrr::map_df(~read_files_txt(.))
+    purrr::map_df(~read_files_txt(.))%>%
+    select(-c(project))
   
   # Combine all downloaded generic Length.csv files into one data frame
   length.files <-list.files.GA("Length.csv") # list all files ending in "Lengths.txt"
@@ -39,7 +41,8 @@ create.length3dpoints<-function(dat){
     dplyr::filter(lines>1)%>% # filter out all empty text files
     dplyr::select(campaign)%>%
     as_vector(.)%>% # list all files ending in "Length.csv"
-    purrr::map_df(~read_files_csv(.))
+    purrr::map_df(~read_files_csv(.))%>%
+    select(-c(project))
   
   # If both Eventmeasure and Generic outputs
   if (dim(lengths)[1] > 0 & dim(length)[1] > 0) {

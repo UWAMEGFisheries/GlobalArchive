@@ -22,6 +22,5 @@ A dataframe containing the json response from the API
 Function that Performs HTTP GET request to  \code{\link{GlobalArchive}}
 }
 \examples{
-process_campaign_object()
 
 }

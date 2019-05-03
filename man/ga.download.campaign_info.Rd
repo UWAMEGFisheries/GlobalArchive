@@ -20,6 +20,5 @@ prints output
 Function that downloads particular campaign info from  \code{\link{GlobalArchive}}
 }
 \examples{
-ga.download.campaign_info()
 
 }

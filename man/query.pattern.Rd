@@ -16,6 +16,5 @@ None
 Query by pattern name \code{\link{GlobalArchive}}
 }
 \examples{
-query.pattern()
 
 }

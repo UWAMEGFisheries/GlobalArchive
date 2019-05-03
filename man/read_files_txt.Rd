@@ -16,6 +16,5 @@ None
 Function that reads in txt files and creates a column for filepath to get CampaignID from \code{\link{GlobalArchive}}
 }
 \examples{
-read_files_txt()
 
 }
