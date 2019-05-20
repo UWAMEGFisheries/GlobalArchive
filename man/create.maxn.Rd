@@ -13,7 +13,7 @@ create.maxn(dat)
 None
 }
 \description{
-The create.maxn function finds all files ending in "Points.txt" and "Count.csv" and combines them into a maxn file, keeps filename, stage, and periodtime
+The create.maxn function finds all files ending in "Points.txt" and "Count.csv" and combines them into a maxn file, keeps filename, and periodtime DOES NOT include stage
 }
 \examples{
 
