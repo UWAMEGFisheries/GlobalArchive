@@ -13,7 +13,7 @@ ga.create.length3dpoints(dat)
 None
 }
 \description{
-The ga.create.length3dpoints function finds all files ending in "Lengths.txt","3DPoints.txt" and "Count.csv" and combines them into one dataframe \code{\link{GlobalArchive}}
+The ga.create.length3dpoints function finds all files ending in "Lengths.txt","3DPoints.txt" and "Length.csv" and combines them into one dataframe \code{\link{GlobalArchive}}
 }
 \examples{
 
