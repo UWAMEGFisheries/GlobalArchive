@@ -20,6 +20,5 @@ library(dplyr)
 citation("GlobalArchive")
 
 # Test
-clean_names(cars)
-
-create.maxn
+ga.clean.names(cars)
+ga.capitalise("tEsT STRINg")

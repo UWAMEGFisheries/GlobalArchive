@@ -1,5 +1,5 @@
 ##  ----
-#' query.project function
+#' ga.query.project function
 #'
 #' Query by project name \code{\link{GlobalArchive}}
 #'
@@ -10,7 +10,7 @@
 #' @examples
 #'
 #' @export
-query.project<-function(project){
+ga.query.project<-function(project){
   q='{"filters":[{"name":"project","op":"has","val":{"name":"name","op":"eq","val":"Insert project"}}]}'
   q<-str_replace_all(q,"Insert project",project)
 }

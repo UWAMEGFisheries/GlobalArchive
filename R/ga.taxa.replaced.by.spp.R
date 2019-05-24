@@ -10,7 +10,7 @@
 #' @examples
 #'
 #' @export
-taxa.replaced.by.spp<-function(dat){
+ga.taxa.replaced.by.spp<-function(dat){
   dat<-dat%>%
     dplyr::filter(species%in%sp.list)%>%
     dplyr::distinct(campaignid,family,genus,species)%>%

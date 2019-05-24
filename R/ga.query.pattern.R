@@ -1,5 +1,5 @@
 ##  ----
-#' query.pattern function
+#' ga.query.pattern function
 #'
 #' Query by pattern name \code{\link{GlobalArchive}}
 #'
@@ -10,7 +10,7 @@
 #' @examples
 #'
 #' @export
-query.pattern<-function(pattern){
+ga.query.pattern<-function(pattern){
   q='{"filters":[{"name":"name","op":"like","val":"%pattern%"}]}'  
   q<-str_replace_all(q,"pattern",pattern)
 }

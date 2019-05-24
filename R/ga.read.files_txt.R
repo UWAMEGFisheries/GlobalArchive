@@ -10,10 +10,10 @@
 #' @examples
 #'
 #' @export
-read_files_txt <- function(flnm) {
+ga.read.files_txt <- function(flnm) {
   read_tsv(flnm,col_types = cols(.default = "c"))%>% 
     dplyr::mutate(campaign.naming=str_replace_all(flnm,paste(download.dir,"/",sep=""),""))%>%
     tidyr::separate(campaign.naming,into=c("project","campaignid"),sep="/", extra = "drop", fill = "right")%>%
-    clean_names%>%
+    ga.clean.names%>%
     plyr::rename(., replace = c(opcode="sample"),warn_missing = TRUE)
 }

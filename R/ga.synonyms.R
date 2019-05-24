@@ -10,7 +10,7 @@
 #' @examples
 #'
 #' @export
-change.synonyms<-function(dat,return.changes=FALSE,save.report=FALSE){
+ga.change.synonyms<-function(dat,return.changes=FALSE,save.report=FALSE){
 dat.spp<-dplyr::left_join(dat,synonyms,by=c("family","genus","species"))%>%
   dplyr::mutate(genus=ifelse(!is.na(genus_correct),genus_correct,genus))%>%
   dplyr::mutate(species=ifelse(!is.na(species_correct),species_correct,species))%>%

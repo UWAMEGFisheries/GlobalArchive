@@ -9,7 +9,7 @@
 #' @examples
 #'
 #' @export
-clean_names <- function(dat){
+ga.clean.names <- function(dat){
   old_names <- names(dat)
   new_names <- old_names %>%
     gsub("%", "percent", .) %>%

@@ -1,5 +1,5 @@
 ##  ----
-#' query.workgroup function
+#' ga.query.workgroup function
 #'
 #' Query by workgroup name \code{\link{GlobalArchive}}
 #'
@@ -10,7 +10,7 @@
 #' @examples
 #'
 #' @export
-query.workgroup<-function(workgroup){
+ga.query.workgroup<-function(workgroup){
   q='{"filters":[{"name":"workgroups","op":"any","val":{"name":"name","op":"eq","val":"Insert workgroup"}}]}'
   q<-str_replace_all(q,"Insert workgroup",workgroup)
 }

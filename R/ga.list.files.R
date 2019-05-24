@@ -1,5 +1,5 @@
 ##  ----
-#' list.files.GA function
+#' ga.list.files function
 #'
 #' Function that lists campaign objects from \code{\link{GlobalArchive}}
 #'
@@ -10,7 +10,7 @@
 #' @examples
 #'
 #' @export
-list.files.GA<-function(pattern) {
+ga.list.files<-function(pattern) {
   list.files(path=download.dir, 
              recursive=T,
              pattern=pattern,

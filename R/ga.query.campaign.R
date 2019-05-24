@@ -1,5 +1,5 @@
 ##  ----
-#' query.campaign function
+#' ga.query.campaign function
 #'
 #' Query by campaign name \code{\link{GlobalArchive}}
 #'
@@ -10,7 +10,7 @@
 #' @examples
 #'
 #' @export
-query.campaign<-function(campaign){
+ga.query.campaign<-function(campaign){
   q='{"filters":[{"name":"name","op":"eq","val":"Insert campaignID"}]}'
   q<-str_replace_all(q,"Insert campaignID",campaign)
 }

@@ -1,7 +1,7 @@
 ##  ----
-#' create.maxn function
+#' ga.create.maxn function
 #'
-#' The create.maxn function finds all files ending in "Points.txt" and "Count.csv" and combines them into a maxn file, keeps filename, and periodtime DOES NOT include stage
+#' The ga.create.maxn function finds all files ending in "Points.txt" and "Count.csv" and combines them into a maxn file, keeps filename, and periodtime DOES NOT include stage
 #'
 #' @param object file to be manipulated
 #'
@@ -10,9 +10,9 @@
 #' @examples
 #'
 #' @export
-create.maxn<-function(dat){
+ga.create.maxn<-function(dat){
   
-  points.files <-list.files.GA("Points.txt") # list all files ending in "Lengths.txt"
+  points.files <-ga.list.files("Points.txt") # list all files ending in "Lengths.txt"
   points.files$lines<-sapply(points.files,countLines) # Count lines in files (to avoid empty files breaking the script)
   
   points<-as.data.frame(points.files)%>%
@@ -20,10 +20,10 @@ create.maxn<-function(dat){
     filter(lines>1)%>% # filter out all empty text files
     dplyr::select(campaign)%>%
     as_vector(.)%>% # remove all empty files
-    purrr::map_df(~read_files_txt(.))#%>%
+    purrr::map_df(~ga.read.files_txt(.))#%>%
     #select(-c(project))
   
-  count.files <-list.files.GA("Count.csv") # list all files ending in "Lengths.txt"
+  count.files <-ga.list.files("Count.csv") # list all files ending in "Lengths.txt"
   count.files$lines<-sapply(count.files,countLines) # Count lines in files (to avoid empty files breaking the script)
   
   count<-as.data.frame(count.files)%>%
@@ -31,7 +31,7 @@ create.maxn<-function(dat){
     dplyr::filter(lines>1)%>% # filter out all empty text files
     dplyr::select(campaign)%>%
     as_vector(.)%>% # remove all empty files
-    purrr::map_df(~read_files_csv(.))#%>%
+    purrr::map_df(~ga.read.files_csv(.))#%>%
     #select(-c(project))
   
   # If count is blank but there are points

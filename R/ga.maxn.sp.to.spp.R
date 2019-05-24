@@ -1,5 +1,5 @@
 ##  ----
-#' maxn.sp.to.spp function
+#' ga.maxn.sp.to.spp function
 #'
 #' Change all sp1 sp2 sp3 to spp \code{\link{GlobalArchive}}
 #'
@@ -10,7 +10,7 @@
 #' @examples
 #'
 #' @export
-maxn.sp.to.spp<-function(dat,sp.list,return.changes=FALSE){
+ga.maxn.sp.to.spp<-function(dat,sp.list,return.changes=FALSE){
   dat.spp<-dat%>%
     dplyr::mutate(species=ifelse(species%in%sp.list,"spp",as.character(species)))%>% # Change all of the sp in the sp.list into spp
     dplyr::mutate(species=ifelse(grepl("sp | sp|spp",species),"spp",as.character(species)))%>%

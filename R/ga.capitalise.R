@@ -8,7 +8,7 @@
 #' @return None
 #'
 #' @examples
-#' capitalise("tEst dATa")
+#' ga.capitalise("tEst dATa")
 #'
 #' @export
-capitalise=function(x) paste0(toupper(substr(x, 1, 1)), tolower(substring(x, 2)))
+ga.capitalise=function(x) paste0(toupper(substr(x, 1, 1)), tolower(substring(x, 2)))

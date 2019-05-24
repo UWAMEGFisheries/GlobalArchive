@@ -1,5 +1,5 @@
 ##  ----
-#' lengths.sp.to.spp function
+#' ga.lengths.sp.to.spp function
 #'
 #' Change all sp1 sp2 sp3 to spp and only keep the one with the most length measurements \code{\link{GlobalArchive}}
 #'
@@ -10,7 +10,7 @@
 #' @examples
 #'
 #' @export
-lengths.sp.to.spp<-function(dat,sp.list,return.changes=FALSE){
+ga.lengths.sp.to.spp<-function(dat,sp.list,return.changes=FALSE){
   length.number<-dat%>%
     dplyr::group_by(campaignid,sample,family,genus,species)%>%
     dplyr::summarise(total=sum(number))%>%
