@@ -12,7 +12,7 @@
 #' @export
 ga.create.length3dpoints<-function(dat){
   
-  threedpoints.files <-list.files.GA("3DPoints.txt") # list all files ending in "3DPoints.txt"
+  threedpoints.files <-ga.list.files("3DPoints.txt") # list all files ending in "3DPoints.txt"
   threedpoints.files$lines<-sapply(threedpoints.files,countLines) # Count lines in files (to avoid empty files breaking the script)
   threedpoints<-as.data.frame(threedpoints.files)%>%
     dplyr::mutate(campaign=row.names(.))%>%
@@ -23,7 +23,7 @@ ga.create.length3dpoints<-function(dat){
     #select(-c(project))
   
   # Combine all downloaded Lengths txt files into one data frame (EM)
-  lengths.files <-list.files.GA("Lengths.txt") # list all files ending in "Lengths.txt"
+  lengths.files <-ga.list.files("Lengths.txt") # list all files ending in "Lengths.txt"
   lengths.files$lines<-sapply(lengths.files,countLines) # Count lines in files (to avoid empty files breaking the script)
   lengths<-as.data.frame(lengths.files)%>%
     dplyr::mutate(campaign=row.names(.))%>%
@@ -34,7 +34,7 @@ ga.create.length3dpoints<-function(dat){
     #select(-c(project))
   
   # Combine all downloaded generic Length.csv files into one data frame
-  length.files <-list.files.GA("Length.csv") # list all files ending in "Lengths.txt"
+  length.files <-ga.list.files("Length.csv") # list all files ending in "Lengths.txt"
   length.files$lines<-sapply(length.files,countLines) # Count lines in files (to avoid empty files breaking the script)
   length <-as.data.frame(length.files)%>%
     dplyr::mutate(campaign=row.names(.))%>%
