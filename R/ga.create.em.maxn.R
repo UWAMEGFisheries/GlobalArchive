@@ -22,7 +22,7 @@ points<-as.data.frame(points.files)%>%
 #select(-c(project))
 
 maxn<-points%>%
-  dplyr::group_by(campaignid,sample,filename,period,periodtime,frame,family,genus,species)%>%
+  dplyr::group_by(campaignid,sample,filename,period,periodtime,frame,family,genus,species,comment)%>%
   dplyr::mutate(number=as.numeric(number))%>%
   dplyr::summarise(maxn=sum(number))%>%
   dplyr::group_by(campaignid,sample,family,genus,species)%>%
